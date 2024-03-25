@@ -62,7 +62,7 @@ XI_API_KEY = "2313a1fbc5eebdb4ec07393226cf81be"  # Your API key for authenticati
 VOICE_ID = "pNInz6obpgDQGcFmaJgB"  # ID of the voice model to use
 
 
-class AudioFileCreateView(views.CreateView):
+class AudioFileCreateView(auth_mixin.LoginRequiredMixin, views.CreateView):
     model = AudioFile
     form_class = AudioFileForm
     template_name = 'voices/audiofile_create.html'

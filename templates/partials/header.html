@@ -1,0 +1,65 @@
+{% load static %}
+
+<header>
+    <nav>
+        <img src="{% static '/images/snake-4-xxl.png' %}" alt="voice" />
+
+                <!-- Link to Home Page -->
+                <a href="{% url 'index' %}"></a>
+
+                <!-- Link to Home Page -->
+                <a href="{% url 'index' %}">
+                    <i>Home</i>
+                </a>
+    
+                <ul>
+                    <li>
+                        <!-- Link to Add Pet Page -->
+                        <a href="{% url 'audiofile_create' %}">
+                            <i>Create voice</i>
+                        </a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+{#                    <li>#}
+{#                        <!-- Link to Add Pet Page -->#}
+{#                        <a href="{% url 'audiofile_create' %}">#}
+{#                            <i>Create voice</i>#}
+{#                        </a>#}
+{#                    </li>#}
+                    <li>
+                        <!-- Link to Profile Page -->
+                        <a href="{% url 'audiofile-list' %}">
+                            <i>Audio list</i>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Link to Profile Page -->
+                        <a href="{% url 'profile-detail' pk=request.user.pk %}">
+                            <i>Profile</i>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Log out -->
+                        <a href="{% url 'signout user' %}">
+                            <i>Sign out</i>
+                        </a>
+                    </li>
+                        
+                    {% else %}
+                        
+                    <li>
+                        <!-- Link to Login Page -->
+                        <a href="{% url 'signin user' %}">
+                            <i>Sign in</i>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Link to Register Page -->
+                        <a href="{% url 'signup user' %}">
+                            <i>Sign up</i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+    </nav>
+</header>
