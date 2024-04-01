@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "Speechify.web.apps.WebConfig",
     "Speechify.accounts.apps.AccountsConfig",
     "Speechify.profiles.apps.ProfilesConfig",
-    "Speechify.voices.apps.VoicesConfig"
+    "Speechify.voices.apps.VoicesConfig",
 ]
 
 MIDDLEWARE = [
